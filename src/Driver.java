@@ -58,5 +58,8 @@ public class Driver {
         for (int i = 0; i < numberPeople; i++) {
             System.out.println(employees.get(i));
         }
+
+        Trace.TraceIndex = 11;
+        Trace.Trace();
     }
 }

@@ -51,6 +51,12 @@ public class Driver {
             System.exit(0);
         }
 
+        //set trace level
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter the trace level: ");
+        Trace.TraceIndex = sc.nextInt();
+
+        //begin simulation
         System.out.println("** Taxi Simulation **");
         System.out.println("Number of people: "+ numberPeople);
         System.out.println("Number of branches: "+ numberBranches);
@@ -59,7 +65,12 @@ public class Driver {
             System.out.println(employees.get(i));
         }
 
-        Trace.TraceIndex = 11;
-        Trace.Trace();
+        //create the taxi
+        Taxi t = new Taxi(numberBranches);
+        for (Person p: employees) {
+            p.start();
+        }
+
+
     }
 }

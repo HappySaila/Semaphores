@@ -13,20 +13,8 @@
 public class Trace {
     public static int TraceIndex = 0;
 
-    public static void Trace(){
-        //check trace level 0
-        if ((TraceIndex&0)!=0){
-            Trace(1);
-        }
-        //check trace level 1,2,4,8,16
-        for (int i = 1; i < 32; i*=2) {
-            if ((TraceIndex&i)!=0){
-                Trace(i);
-            }
-        }
-    }
-
     public static void Trace(int i){
+        i = ((TraceIndex&i)!=0) ? i : 0;
         switch(i){
             case 1:
                 TraceDeparture();

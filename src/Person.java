@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Created by HappySaila on 6/15/17.
  */
-public class Person {
+public class Person extends Thread{
     private int personID;
     private ArrayList<Task> Tasks;
 
@@ -21,6 +21,14 @@ public class Person {
 
         while(sc.hasNext()){
             Tasks.add(new Task(sc.nextInt(), sc.nextInt()));
+        }
+    }
+
+    public void run(){
+        //contains all persons logic
+        System.out.println("person running...");
+        while(Tasks.size()>0){
+            //while the user has tasks
         }
     }
 

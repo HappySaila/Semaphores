@@ -47,7 +47,7 @@ public class Trace {
 
         }
     }
-    static void TraceIdle(int currentLocation){
+    static void TraceIdle(){
         System.out.println(Timer.GetGlobalTime() + " - Taxi idle.");
     }
 

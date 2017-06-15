@@ -14,6 +14,8 @@ public class Taxi extends Thread{
     private Semaphore sem;
     private Semaphore taxiMove;
     private int numberOfPeople;
+    private int completedPeople;
+    private boolean isIdle=false;
 
     public Taxi(int numberBranches, int people){
         currentLocation = 0;
@@ -36,11 +38,12 @@ public class Taxi extends Thread{
 
     @Override
     public void run(){
-        while (true){
+        while (completedPeople!=numberOfPeople){
             if (taxiMove.availablePermits() == 0){
                 CriticalSection();
             }
         }
+        System.out.println("Jobs finished.");
     }
 
     public void CriticalSection(){
@@ -53,21 +56,27 @@ public class Taxi extends Thread{
         pickUpPassengers();
         if (onBoard.size()!=prevOnBoard || toFetch.size()!=prevToFetch){
             //increment clock for emarking
-            Timer.IncrementTime(1);
+            Timer.Instance.IncrementTime(1);
         }
 
         //determine next location
         int nextDestination = determineNextLocation();
         if (nextDestination == -1){
             if(toFetch.size()==0 && onBoard.size()==0){
-                Timer.IncrementTime(1);
-                Trace.TraceIdle(currentLocation);
-                System.exit(0);
+                //idle
+                Timer.Instance.IncrementTime(1);
+                if (!isIdle){
+                    Trace.TraceIdle();
+                }
+                isIdle = true;
             } else{
                 System.out.println("Could not find a suitable next location.");
                 System.exit(0);
             }
+        } else {
+            isIdle = false;
         }
+
 
         //drive to next location
         Drive(nextDestination);
@@ -79,6 +88,11 @@ public class Taxi extends Thread{
         for (int i = 0; i < numberOfPeople; i++) {
             taxiMove.release();
         }
+    }
+
+    public void PersonComplete(){
+        //person has no more work to do.
+        completedPeople++;
     }
 
     private void pickUpPassengers(){
@@ -105,7 +119,7 @@ public class Taxi extends Thread{
                 t.getPerson().Disembark();
             }
         }
-        if (onBoard.size()==before){
+        if (onBoard.size()==before && !isIdle){
             Trace.TraceDisembark(null);
         }
     }
@@ -142,10 +156,13 @@ public class Taxi extends Thread{
     }
 
     private void Drive(int i){
-        currentLocation = i;
-        Timer.IncrementTime(2);
+        if (isIdle){
+            return;
+        }
         Trace.TraceDeparture(currentLocation);
-        Trace.TraceArrival(currentLocation+1);
+        currentLocation = i;
+        Timer.Instance.IncrementTime(2);
+        Trace.TraceArrival(i);
     }
 
     public synchronized void Hail(TravelRequest travelRequest){

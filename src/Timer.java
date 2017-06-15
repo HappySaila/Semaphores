@@ -8,6 +8,11 @@ public class Timer {
     public static int GlobalTimer;
     private ArrayList<Person> employees;
 
+    public Timer(ArrayList<Person> employees){
+        Instance = this;
+        this.employees = employees;
+    }
+
     public static String GetGlobalTime(){
         int hours = 9 + GlobalTimer/60;
         int minutes = GlobalTimer%60;
@@ -19,7 +24,7 @@ public class Timer {
         GlobalTimer += i;
 
         for (Person p: employees) {
-
+            p.IncreaseTimeOnSite(i);
         }
     }
 }

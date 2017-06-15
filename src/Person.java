@@ -11,7 +11,9 @@ public class Person extends Thread{
     private Queue<Task> Tasks;
     private int location;
     private boolean onTaxi;
+
     private int timeOnCurrentSite;
+    private int timeRequiredOnSite;
 
 
     public Person(String input){
@@ -49,12 +51,12 @@ public class Person extends Thread{
             }
         }
 
-        System.out.println("Person " + personID + " done for the day");
+        Complete();
     }
 
     private boolean canLeaveSite(){
         //will return true if current person has been on the site longer than required duration
-
+        return timeOnCurrentSite >= timeRequiredOnSite;
     }
 
     public void Hail(){
@@ -69,14 +71,25 @@ public class Person extends Thread{
 
     public void Disembark(){
         onTaxi = false;
+        timeOnCurrentSite = 0;
+        timeRequiredOnSite = Tasks.poll().getDuration();
     }
 
     public TravelRequest getTravelRequest(){
-        return new TravelRequest(this, location, Tasks.poll().getBranch());
+        return new TravelRequest(this, location, Tasks.peek().getBranch());
+    }
+
+    private void Complete(){
+        System.out.println(Timer.GetGlobalTime() + " - Person " + personID + " done for the day");
+        Taxi.getInstance().PersonComplete();
     }
 
     public int getPersonID() {
         return personID;
+    }
+
+    public void IncreaseTimeOnSite(int i){
+        timeOnCurrentSite += i;
     }
 
     @Override

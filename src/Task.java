@@ -14,4 +14,12 @@ public class Task {
     public String toString() {
         return "(" + branch + ", " + duration + ')';
     }
+
+    public int getBranch() {
+        return branch;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
 }

@@ -8,7 +8,6 @@ import java.util.Scanner;
  */
 public class Driver {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         String fileName = "Input.txt";
         ArrayList<Person> employees = new ArrayList<>();
         int numberPeople = 0;
@@ -54,7 +53,8 @@ public class Driver {
         //set trace level
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter the trace level: ");
-        Trace.TraceIndex = sc.nextInt();
+//        Trace.TraceIndex = sc.nextInt();
+        Trace.TraceIndex = 26;
 
         //begin simulation
         System.out.println("** Taxi Simulation **");
@@ -65,12 +65,13 @@ public class Driver {
             System.out.println(employees.get(i));
         }
 
+        System.out.println("\n** Trace **");
         //create the taxi
-        Taxi t = new Taxi(numberBranches);
+        Taxi t = new Taxi(numberBranches, numberPeople);
         for (Person p: employees) {
             p.start();
         }
-
+        t.start();
 
     }
 }

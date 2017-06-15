@@ -1,3 +1,5 @@
+import com.sun.deploy.trace.TraceLevel;
+
 /**
  * Created by HappySaila on 6/15/17.
  * Controller for execution tracing. A bitwise integer value is used to represent the level of detail:
@@ -13,41 +15,40 @@
 public class Trace {
     public static int TraceIndex = 0;
 
-    public static void Trace(int i){
-        i = ((TraceIndex&i)!=0) ? i : 0;
-        switch(i){
-            case 1:
-                TraceDeparture();
-                break;
-            case 2:
-                TraceArrival();
-                break;
-            case 4:
-                TraceHail();
-                break;
-            case 8:
-                TraceEmbark();
-                break;
-            case 16:
-                TraceDisembark();
-                break;
+    static void TraceDeparture(int location){
+        if ((TraceIndex&1)!=0) {
+            System.out.println(Timer.GetGlobalTime() + " - Leaving " + location + ".");
         }
     }
+    static void TraceArrival(int location){
+        if ((TraceIndex&2)!=0) {
+            System.out.println(Timer.GetGlobalTime() + " - Arriving at " + location + ".");
+        }
+    }
+    public static void TraceHail(TravelRequest t){
+        if ((TraceIndex&4)!=0){
+            System.out.println(Timer.GetGlobalTime() + " - Person "+ t.getPerson().getPersonID() + " hail at " + t.getSource() + ".");
+        }
 
-    static void TraceDeparture(){
-        System.out.println("Departure");
     }
-    static void TraceArrival(){
-        System.out.println("Arrival");
+    static void TraceEmbark(TravelRequest t){
+        if ((TraceIndex&8)!=0){
+            System.out.println(Timer.GetGlobalTime() + " - Person "+ t.getPerson().getPersonID() + " requests "+t.getDestination() + ".");
+        }
+
     }
-    static void TraceHail(){
-        System.out.println("Hail");
+    static void TraceDisembark(TravelRequest t){
+        if ((TraceIndex&16)!=0){
+            if (t!=null){
+                System.out.println(Timer.GetGlobalTime() + " - Person "+ t.getPerson().getPersonID() + " got off.");
+            } else {
+                System.out.println(Timer.GetGlobalTime() + " - No body got off.");
+            }
+
+        }
     }
-    static void TraceEmbark(){
-        System.out.println("Embark");
-    }
-    static void TraceDisembark(){
-        System.out.println("Disembark");
+    static void TraceIdle(int currentLocation){
+        System.out.println(Timer.GetGlobalTime() + " - Taxi idle.");
     }
 
 

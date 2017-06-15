@@ -10,13 +10,12 @@ public class Driver {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         String fileName = "Input.txt";
-
+        ArrayList<Person> employees = new ArrayList<>();
+        int numberPeople = 0;
+        int numberBranches = 0;
 
         try {
             Scanner sc = new Scanner(new File(fileName)).useDelimiter("[^0-9]+");
-            int numberPeople = 0;
-            int numberBranches = 0;
-            ArrayList<Person> employees;
 
             //get number of people
             if (!sc.hasNext()){
@@ -42,11 +41,22 @@ public class Driver {
                 while (subSc.hasNext()){
                     inputLineForConstructor += subSc.nextInt()+" ";
                 }
-                employees.add(new Person(inputLineForConstructor));
+
+                if (!inputLineForConstructor.equals("")){
+                    employees.add(new Person(inputLineForConstructor));
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("File "+fileName+" was not found!");
             System.exit(0);
+        }
+
+        System.out.println("** Taxi Simulation **");
+        System.out.println("Number of people: "+ numberPeople);
+        System.out.println("Number of branches: "+ numberBranches);
+
+        for (int i = 0; i < numberPeople; i++) {
+            System.out.println(employees.get(i));
         }
     }
 }

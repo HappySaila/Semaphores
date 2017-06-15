@@ -9,4 +9,9 @@ public class Task {
         this.branch = branch;
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "(" + branch + ", " + duration + ')';
+    }
 }

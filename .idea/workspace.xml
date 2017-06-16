@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23c6d894-0adf-45d4-abf2-2cdd992b1d9b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TraceItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Semaphores/Driver.class" afterPath="$PROJECT_DIR$/out/production/Semaphores/Driver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Semaphores/Taxi.class" afterPath="$PROJECT_DIR$/out/production/Semaphores/Taxi.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Semaphores/Trace.class" afterPath="$PROJECT_DIR$/out/production/Semaphores/Trace.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Driver.java" afterPath="$PROJECT_DIR$/src/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Person.java" afterPath="$PROJECT_DIR$/src/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Taxi.java" afterPath="$PROJECT_DIR$/src/Taxi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Trace.java" afterPath="$PROJECT_DIR$/src/Trace.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TraceItem.java" afterPath="$PROJECT_DIR$/src/TraceItem.java" />
     </list>
     <ignored path="Semaphores.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,25 +36,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TraceItem.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TraceItem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TraceItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            <state relative-caret-position="130">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#297#298#0" expanded="true" />
                 <element signature="e#324#325#0" expanded="true" />
                 <element signature="e#355#356#0" expanded="true" />
                 <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
+                <element signature="e#428#429#0" expanded="true" />
+                <element signature="e#462#463#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Person.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
@@ -203,10 +195,10 @@
         <option value="$PROJECT_DIR$/Input.txt" />
         <option value="$PROJECT_DIR$/src/Timer.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
-        <option value="$PROJECT_DIR$/src/TraceItem.java" />
         <option value="$PROJECT_DIR$/src/Taxi.java" />
         <option value="$PROJECT_DIR$/src/Trace.java" />
         <option value="$PROJECT_DIR$/src/Person.java" />
+        <option value="$PROJECT_DIR$/src/TraceItem.java" />
       </list>
     </option>
   </component>
@@ -734,12 +726,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497522065321</updated>
-      <workItem from="1497522068826" duration="26405000" />
+      <workItem from="1497522068826" duration="26450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26405000" />
+    <option name="totallyTimeSpent" value="26450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -865,22 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TraceItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Taxi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -891,16 +867,6 @@
             <element signature="method#Disembark#0;class#Taxi#0" expanded="false" />
             <element signature="e#5437#5438#0" expanded="true" />
             <element signature="e#5468#5469#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Trace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -921,6 +887,32 @@
             <element signature="e#2479#2480#0" expanded="true" />
             <element signature="e#2525#2526#0" expanded="true" />
             <element signature="e#2588#2589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Trace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TraceItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
           </folding>
         </state>
       </provider>

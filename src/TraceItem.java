@@ -21,12 +21,6 @@ public class TraceItem {
         return data;
     }
 
-    public int GetTimeValue(){
-        Scanner s = new Scanner("09:08");
-        String[] val = s.next().split(":");
-        return Integer.parseInt(val[0])*60 + Integer.parseInt(val[1]);
-    }
-
     @Override
     public String toString() {
         return time + data;

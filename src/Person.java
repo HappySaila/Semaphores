@@ -80,7 +80,8 @@ public class Person extends Thread{
     }
 
     private void Complete(){
-        System.out.println(Timer.GetGlobalTime() + " - Person " + personID + " done for the day");
+//        System.out.println(Timer.GetGlobalTime() + " - Person " + personID + " done for the day");
+        Trace.traces.add(new TraceItem(Timer.GetGlobalTime(), (" - Person " + personID + " done for the day")));
         Taxi.getInstance().PersonComplete();
     }
 

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -42,6 +43,10 @@ public class Taxi extends Thread{
             if (taxiMove.availablePermits() == 0){
                 CriticalSection();
             }
+        }
+        Collections.sort(Trace.traces, new TraceItem.TraceCompatator());
+        for (TraceItem t: Trace.traces) {
+            System.out.println(t);
         }
         System.out.println("Jobs finished.");
     }

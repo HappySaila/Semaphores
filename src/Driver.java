@@ -66,6 +66,7 @@ public class Driver {
         }
 
         new Timer(employees);
+        Trace.traces = new ArrayList<>();
         System.out.println("\n** Trace **");
         //create the taxi
         Taxi t = new Taxi(numberBranches, numberPeople);
